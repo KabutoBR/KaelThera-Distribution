@@ -1,0 +1,223 @@
+#Master switch. When false the mod does nothing (all hooks become pass-through).
+enabled = true
+#Quick setup. QUALITY / BALANCED / PERFORMANCE set the animation framerates and the detail, shadow and
+#sound distances for you. Choose CUSTOM to use your own values from the sections below.
+#Allowed Values: QUALITY, BALANCED, PERFORMANCE, CUSTOM
+preset = "BALANCED"
+
+#Statistics panel (toggle with the key set in Controls, F7 by default).
+[hud]
+	#Screen corner of the statistics panel.
+	#Allowed Values: TOP_LEFT, TOP_RIGHT, BOTTOM_LEFT, BOTTOM_RIGHT
+	position = "TOP_LEFT"
+	#Size of the statistics panel.
+	# Default: 1.0
+	# Range: 0.5 ~ 2.0
+	scale = 1.0
+
+#Asynchronous occlusion culling for Create block entities.
+#Visibility is ray-traced against opaque blocks on a background thread (similar to Entity Culling),
+#so the render thread only reads a boolean.
+[occlusion]
+	#Enable the background occlusion tracer.
+	enabled = true
+	#Skip Create block entity renderers (BERs) that are hidden behind blocks.
+	#BERs draw items on belts/depots, fluids, filters, text, and ALL kinetic geometry when Flywheel is
+	#off (e.g. with a shader pack). AUTO = ON unless Entity Culling is installed, because Entity Culling
+	#already culls every BER and running both would trace the same blocks twice.
+	#Allowed Values: AUTO, ON, OFF
+	berCulling = "AUTO"
+	#Skip per-frame updates of Create's CPU-animated Flywheel visuals while they are occluded.
+	#The instanced geometry itself stays on the GPU (Flywheel's indirect backend already Hi-Z culls it).
+	gateVisualUpdates = true
+	#Only trace block entities closer than this many blocks (vanilla BE render distance is 64).
+	# Default: 64
+	# Range: 8 ~ 256
+	maxDistance = 64
+	#Render bounding boxes larger than this (in any axis) are never culled.
+	# Default: 16
+	# Range: 1 ~ 64
+	maxBoxSize = 16
+	#Extra margin (blocks) added around each render box before tracing. Larger = fewer pop-ins, less culling.
+	# Default: 0.25
+	# Range: 0.0 ~ 2.0
+	boxPadding = 0.25
+	#Once seen, a block entity stays un-culled for at least this long (prevents flicker).
+	# Default: 1000
+	# Range: 0 ~ 10000
+	visibleHoldMs = 1000
+	#Sleep between tracing passes of the culling thread, in milliseconds.
+	# Default: 10
+	# Range: 1 ~ 250
+	threadSleepMs = 10
+	#Treat leaves as opaque occluders (more culling in forests, may cause pop-in with fancy leaves).
+	leavesAreOpaque = false
+	#Block entity types whose renderer says 'render off-screen' but which declare a correct render
+	#bounding box, so they are safe to frustum-cull and occlusion-cull. Everything else with
+	#shouldRenderOffScreen=true (weighted ejectors, elevator pulleys, schematicannons, other mods) is never culled.
+	trustedRenderBoxes = ["create:mechanical_press", "create:mechanical_mixer", "create:mechanical_arm", "create:belt", "create:chain_conveyor", "create:fluid_tank", "create:creative_fluid_tank", "create:track", "create:track_station", "create:rope_pulley", "create:hose_pulley", "create:flap_display"]
+	#Skip Create block entity renderers that are outside the camera's view.
+	#Vanilla/NeoForge already do this, but Sodium's loop for 'render off-screen' block entities doesn't,
+	#so with Sodium every Create press, belt, arm, chain conveyor, tank and curved track is drawn every
+	#frame even when it is behind you.
+	berFrustumCulling = true
+	#Also hide trains and other Create contraptions that are completely behind terrain (tunnels, hills,
+	#walls). Their renderer still runs so couplings stay attached; only the drawing is skipped. Never applied to
+	#shadows. Needs Sodium.
+	contraptions = true
+	#Block entity types that must never be occlusion-culled.
+	blacklist = []
+
+#Dynamic animation framerate. Without shaders it gates Create's CPU-animated Flywheel visuals; with a shader
+#pack (Flywheel off) it throttles Create's block entity renderers and contraptions instead (see below).
+#Rotating shafts/gears/cogs are animated by Flywheel's vertex shader and cost no CPU per frame,
+#so they are unaffected and keep full smoothness. This targets visuals that recompute transforms
+#every frame on the CPU: presses, mixers, deployers, arms, funnels, tunnels, gauges, steam engines,
+#bearings, pulleys, valves, packagers, frogports, etc.
+[animation]
+	#Enable the distance-based adaptive animation framerate.
+	enabled = true
+	#Within this distance (blocks) visuals update every frame.
+	# Default: 10.0
+	# Range: 0.0 ~ 256.0
+	fullRateDistance = 10.0
+	#Between fullRateDistance and this distance, animate at 'midFps'; beyond it, at 'farFps'.
+	# Default: 32.0
+	# Range: 0.0 ~ 512.0
+	midDistance = 32.0
+	#Target animation framerate for the middle band. Never throttles below the actual game FPS.
+	# Default: 30
+	# Range: 1 ~ 240
+	midFps = 30
+	#Target animation framerate for the far band.
+	# Default: 15
+	# Range: 1 ~ 240
+	farFps = 15
+	#Also apply the animation framerate to Create block entity renderers (the path used with shader
+	#packs, where Flywheel is off). Between two updates the last drawn frame is re-used as a finished mesh,
+	#so a throttled machine costs almost nothing. Needs Sodium.
+	throttleBlockEntityRenderers = true
+	#Also apply the animation framerate to trains and other contraptions. They keep moving smoothly;
+	#only their internal animation (wheels, turning on curves, moving parts) updates at the lower rate. Needs Sodium.
+	throttleContraptions = true
+	#Skip per-frame updates of visuals that are outside the camera frustum (only Blaze Burners do this in Create 6).
+	frustumGating = true
+	#Extra radius (blocks) around a visual's render box when testing against the frustum.
+	# Default: 1.0
+	# Range: 0.0 ~ 8.0
+	frustumPadding = 1.0
+	#Visual classes whose name starts with one of these prefixes are managed. Add Create addons here
+	#(e.g. "com.example.createaddon.") once you have verified they behave well.
+	managedPackages = ["com.simibubi.create."]
+	#Visual classes (fully-qualified; superclasses match too) whose geometry reaches far outside
+	#their block and must never be frustum-gated or occlusion-gated.
+	noFrustumGating = ["com.simibubi.create.content.contraptions.pulley.AbstractPulleyVisual", "com.simibubi.create.content.contraptions.elevator.ElevatorPulleyVisual", "com.simibubi.create.content.kinetics.chainConveyor.ChainConveyorVisual", "com.simibubi.create.content.logistics.packagePort.frogport.FrogportVisual", "com.simibubi.create.content.trains.bogey.BogeyBlockEntityVisual"]
+	#Visual classes that are never gated at all (always updated every frame).
+	neverGate = []
+
+#Shader packs (Iris) render the whole scene a second time from the sun for the shadow map.
+#With Flywheel off (always the case with shaders) every Create machine, train and curved track is
+#re-drawn on the CPU for that pass too.
+[shadows]
+	#Create block entities and contraptions (trains, elevators, bearings...) farther than this many
+	#blocks from the camera are left out of the shader shadow map. They are still drawn normally;
+	#only their shadow disappears. 0 = draw all shadows (vanilla behaviour).
+	# Default: 32
+	# Range: 0 ~ 512
+	shadowDistance = 32
+	#Animation framerate of Create machines and trains inside the shadow map, at any distance. Shadows
+	#are low-resolution and soft, so wheels and moving parts updating e.g. 30 times per second is not
+	#visible there, but it halves or quarters the cost of the shadow pass. Trains still move smoothly.
+	#0 = off. Needs Sodium and 'animation.enabled'.
+	# Default: 30
+	# Range: 0 ~ 240
+	animationFps = 30
+
+[trains]
+	#Create gives curved track block entities an INFINITE render box, so every curve within 192
+	#blocks is re-drawn every frame (and in the shadow pass) even when it is behind you. This computes
+	#the real box from the curve's geometry so normal frustum culling can skip it. Only matters when
+	#Flywheel is off (shader packs).
+	finiteTrackBounds = true
+
+#Fast Create renderer + model cache (needs Sodium; replaces CreateBetterFps).
+#With a shader pack (Flywheel off), Create rebuilds every model vertex by vertex each frame. Models that
+#don't change between frames - curved tracks, parked trains, contraptions that aren't moving - are
+#recorded once and then only copied. Anything that moves or changes is detected and drawn normally.
+[modelCache]
+	#Use the fast (Sodium) writer for Create models. Turn off to get Create's original per-vertex
+	#rendering (slower) - useful to check whether a visual glitch comes from this mod. Also disables the caches.
+	fastRenderer = true
+	#Skip faces pointing towards the sun in the shader shadow pass (CreateBetterFps did this).
+	#Saves some work, but with shader packs that also cull on the GPU, contraptions and trains lose their shadow.
+	shadowFaceCulling = false
+	#Cache finished vertices of models drawn identically frame after frame (contraptions, parked trains).
+	contraptionCache = true
+	#Cache whole curved-track meshes (rails, ties, girders).
+	trackCache = true
+	#Stop recording new meshes when the cache uses more than this much memory (MB).
+	# Default: 256
+	# Range: 16 ~ 4096
+	maxMemoryMB = 256
+	#Contraptions lit by the level are re-recorded this often so light changes show up (ms).
+	# Default: 1000
+	# Range: 100 ~ 60000
+	lightRefreshMs = 1000
+	#Also use the cache in the shader shadow pass. Faster, but recorded meshes keep faces the normal
+	#renderer would cull against the sun, so shadows can look slightly different and flicker on
+	#trains/contraptions that switch between cached and normal drawing. Off by default.
+	cacheInShadowPass = false
+	#Build Create model vertices on this many background threads instead of only the render thread.
+	#-1 = automatic (about half your CPU cores, at most 4), 0 = off. Needs Sodium.
+	# Default: -1
+	# Range: -1 ~ 8
+	workerThreads = -1
+	#A moving contraption (e.g. a train on straight track) keeps its cached mesh and is only re-recorded
+	#for new light values after moving this many blocks. 0 = re-record every frame while moving (old behaviour).
+	# Default: 1.5
+	# Range: 0.0 ~ 16.0
+	movingLightStep = 1.5
+
+#Level of detail: small extras of far-away Create machines and trains.
+[lod]
+	#Skip items (on belts, depots, deployers, arms, basins...) and text (display boards, clipboards) drawn
+	#by far-away Create machines and trains. They are a few pixels at that distance. Needs Sodium.
+	enabled = true
+	#Distance (blocks) beyond which those details are skipped. 0 = never.
+	# Default: 48
+	# Range: 0 ~ 512
+	detailDistance = 48
+	#Same for the shader shadow map, where small details are invisible much sooner. 0 = never.
+	# Default: 24
+	# Range: 0 ~ 512
+	shadowDetailDistance = 24
+
+#Create sounds. Each sound start makes the game wait for the sound engine; a factory full of steam
+#engines starts dozens of identical boiler sounds per tick, which causes micro-stutters.
+[sounds]
+	#Skip one-shot Create sounds that are too far to hear, and extra copies of the same sound in one tick.
+	#Looping and moving sounds are never touched.
+	limiter = true
+	#One-shot Create sounds farther than this (blocks) are not started.
+	# Default: 48
+	# Range: 8 ~ 256
+	cullDistance = 48
+	#At most this many copies of the same Create sound start per tick (the rest would overlap).
+	# Default: 4
+	# Range: 1 ~ 64
+	maxSamePerTick = 4
+
+#Compatibility with other mods.
+[compat]
+	#Leave blocks and contraptions inside Sable physics objects (Create: Aeronautics ships and
+	#similar) completely alone: no culling, no animation throttling, no cached meshes. They are drawn
+	#far from where their blocks are stored, so every distance-based optimisation would hide them.
+	#Only turn this off if you are asked to; it does nothing without Sable.
+	sableSubLevels = true
+
+[misc]
+	#Cache the chunk render type Create's KineticBlockEntityRenderer looks up for every block entity every
+	#frame (it allocates a new RandomSource each time). Only matters when Flywheel is off / shaders are on.
+	kineticRenderTypeCache = true
+	#Show a one-line Create IceCream status on the F3 screen (details are in the statistics panel).
+	debugOverlay = true
