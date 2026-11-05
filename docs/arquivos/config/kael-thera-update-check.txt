@@ -1,2 +1,2 @@
-Kael Thera - teste incremental 1.0.1
-Se voce esta lendo isso, o launcher recebeu um arquivo novo sem precisar reinstalar os 163 mods.
+Kael Thera - teste incremental 1.0.4
+A atualizacao foi recebida pelo launcher sem reinstalar o modpack.

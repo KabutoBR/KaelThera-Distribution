@@ -1,12 +1,12 @@
 {
-  "version": "1.0.3",
+  "version": "1.0.4",
   "servers": [
     {
       "id": "Kael_Thera_Test",
       "name": "Kael Thera",
       "description": "Distribuicao local de desenvolvimento - NeoForge 21.1.264",
       "icon": "https://kabutobr.github.io/KaelThera-Distribution/arquivos/branding/kael-thera-mark.png",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "address": "127.0.0.1:25565",
       "minecraftVersion": "1.21.1",
       "mainServer": true,
@@ -8287,13 +8287,24 @@
         },
         {
           "id": "kael-update-check-1-0-1",
-          "name": "Teste de atualizacao Kael Thera 1.0.1",
+          "name": "Teste de atualizacao Kael Thera 1.0.4",
           "type": "File",
           "artifact": {
-            "size": 134,
-            "MD5": "621e8be7fbea32207ad392af0697844b",
+            "size": 106,
+            "MD5": "083ee75f5ccdcb7628ab6a5f8d962a17",
             "path": "config/kael-thera-update-check.txt",
             "url": "https://kabutobr.github.io/KaelThera-Distribution/arquivos/config/kael-thera-update-check.txt"
+          }
+        },
+        {
+          "id": "kael-cupboard-1-21-1-4-2",
+          "name": "mods/cupboard-1.21.1-4.2.jar",
+          "type": "File",
+          "artifact": {
+            "size": 30517,
+            "MD5": "157cec3eeae81606df0183c9f6bdf341",
+            "path": "mods/cupboard-1.21.1-4.2.jar",
+            "url": "https://github.com/KabutoBR/KaelThera-Distribution/releases/download/kael-mods-1.0.2/cupboard-1.21.1-4.2.jar"
           }
         }
       ]
