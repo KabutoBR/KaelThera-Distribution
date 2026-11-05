@@ -4810,39 +4810,6 @@
           }
         },
         {
-          "id": "kael-file-270fcd4c50260fbd2aab",
-          "name": "config/cpm.json",
-          "type": "File",
-          "artifact": {
-            "size": 66,
-            "MD5": "baa9b0dec8d6d3584e8769bfd4b19447",
-            "path": "config/cpm.json",
-            "url": "https://kabutobr.github.io/KaelThera-Distribution/arquivos/config/cpm.json"
-          }
-        },
-        {
-          "id": "kael-file-0d2ca691ac63b2e6ad20",
-          "name": "config/crash_assistant/config.toml",
-          "type": "File",
-          "artifact": {
-            "size": 24217,
-            "MD5": "637c275d0bab7ac16aecb7901f28e3dd",
-            "path": "config/crash_assistant/config.toml",
-            "url": "https://kabutobr.github.io/KaelThera-Distribution/arquivos/config/crash_assistant/config.toml"
-          }
-        },
-        {
-          "id": "kael-file-adcce0de2af42974fae3",
-          "name": "config/crash_assistant/crash_assistant_localization_overrides/README.md",
-          "type": "File",
-          "artifact": {
-            "size": 2650,
-            "MD5": "b5ff102e457b882185ca9611f33aebaa",
-            "path": "config/crash_assistant/crash_assistant_localization_overrides/README.md",
-            "url": "https://kabutobr.github.io/KaelThera-Distribution/arquivos/config/crash_assistant/crash_assistant_localization_overrides/README.md"
-          }
-        },
-        {
           "id": "kael-file-13427f13bc35942ecc28",
           "name": "config/crash_assistant/scripts/log_analysis/example.jexl",
           "type": "File",
@@ -5734,50 +5701,6 @@
           }
         },
         {
-          "id": "kael-file-4955b0c779cb26c9f6e6",
-          "name": "config/NoChatReports/NCR-Client.json",
-          "type": "File",
-          "artifact": {
-            "size": 565,
-            "MD5": "37b8f0ed4931d2d3e87b0f4831a95d2e",
-            "path": "config/NoChatReports/NCR-Client.json",
-            "url": "https://kabutobr.github.io/KaelThera-Distribution/arquivos/config/NoChatReports/NCR-Client.json"
-          }
-        },
-        {
-          "id": "kael-file-72299cd8dada3095981a",
-          "name": "config/NoChatReports/NCR-Common.json",
-          "type": "File",
-          "artifact": {
-            "size": 230,
-            "MD5": "50bbc81415d36251933350271692eeba",
-            "path": "config/NoChatReports/NCR-Common.json",
-            "url": "https://kabutobr.github.io/KaelThera-Distribution/arquivos/config/NoChatReports/NCR-Common.json"
-          }
-        },
-        {
-          "id": "kael-file-5900992e6cbce3dcd649",
-          "name": "config/NoChatReports/NCR-ServerPreferences.json",
-          "type": "File",
-          "artifact": {
-            "size": 24,
-            "MD5": "0968f5e80aa16a9f465f91ee816e165f",
-            "path": "config/NoChatReports/NCR-ServerPreferences.json",
-            "url": "https://kabutobr.github.io/KaelThera-Distribution/arquivos/config/NoChatReports/NCR-ServerPreferences.json"
-          }
-        },
-        {
-          "id": "kael-file-418d0e354efee7fe5f2b",
-          "name": "config/NoChatReports/README.md",
-          "type": "File",
-          "artifact": {
-            "size": 167,
-            "MD5": "964a995c80aa43cc34d780276a65b898",
-            "path": "config/NoChatReports/README.md",
-            "url": "https://kabutobr.github.io/KaelThera-Distribution/arquivos/config/NoChatReports/README.md"
-          }
-        },
-        {
           "id": "kael-file-9eb09cb5c7e9a289155b",
           "name": "config/obscuria/aquamirae-client.toml",
           "type": "File",
@@ -6262,17 +6185,6 @@
           }
         },
         {
-          "id": "kael-file-a8ab09ad3f256e20ff9d",
-          "name": "config/spark/config.json",
-          "type": "File",
-          "artifact": {
-            "size": 117,
-            "MD5": "fd707ecbb3f9675d81535e88b7712d0b",
-            "path": "config/spark/config.json",
-            "url": "https://kabutobr.github.io/KaelThera-Distribution/arquivos/config/spark/config.json"
-          }
-        },
-        {
           "id": "kael-file-9b053dafb403e9cfa243",
           "name": "config/supplementaries-client.toml",
           "type": "File",
@@ -6416,39 +6328,6 @@
           }
         },
         {
-          "id": "kael-file-bdb989c14e44d5ce9316",
-          "name": "config/voicechat/translations.properties",
-          "type": "File",
-          "artifact": {
-            "size": 1182,
-            "MD5": "4af29bbbf5267fe4298e80c2e6ebca63",
-            "path": "config/voicechat/translations.properties",
-            "url": "https://kabutobr.github.io/KaelThera-Distribution/arquivos/config/voicechat/translations.properties"
-          }
-        },
-        {
-          "id": "kael-file-1bc27065c34fe2c61e5c",
-          "name": "config/voicechat/voicechat-client.properties",
-          "type": "File",
-          "artifact": {
-            "size": 5063,
-            "MD5": "3d30d9ed3b42fa030b6447d03135748e",
-            "path": "config/voicechat/voicechat-client.properties",
-            "url": "https://kabutobr.github.io/KaelThera-Distribution/arquivos/config/voicechat/voicechat-client.properties"
-          }
-        },
-        {
-          "id": "kael-file-3371ffa0a055f31ff0ba",
-          "name": "config/voicechat/voicechat-server.properties",
-          "type": "File",
-          "artifact": {
-            "size": 3072,
-            "MD5": "fb0c18824b2d01ddc105852defd63a60",
-            "path": "config/voicechat/voicechat-server.properties",
-            "url": "https://kabutobr.github.io/KaelThera-Distribution/arquivos/config/voicechat/voicechat-server.properties"
-          }
-        },
-        {
           "id": "kael-file-f55e46c0219d9d0d6d9d",
           "name": "config/waterframes-client.toml",
           "type": "File",
@@ -6471,17 +6350,6 @@
           }
         },
         {
-          "id": "kael-file-9d64f4486153640c8508",
-          "name": "config/watermedia/custom_vlc_path.txt",
-          "type": "File",
-          "artifact": {
-            "size": 0,
-            "MD5": "d41d8cd98f00b204e9800998ecf8427e",
-            "path": "config/watermedia/custom_vlc_path.txt",
-            "url": "https://kabutobr.github.io/KaelThera-Distribution/arquivos/config/watermedia/custom_vlc_path.txt"
-          }
-        },
-        {
           "id": "kael-file-4e6f00337b9ecaf9d1ef",
           "name": "config/waystones-common.toml",
           "type": "File",
@@ -6501,204 +6369,6 @@
             "MD5": "428e455713863dac1306a0dcefd6f4b6",
             "path": "config/weaponmaster_ydm-common.toml",
             "url": "https://kabutobr.github.io/KaelThera-Distribution/arquivos/config/weaponmaster_ydm-common.toml"
-          }
-        },
-        {
-          "id": "kael-file-07d71ac26b5b2c5d542f",
-          "name": "config/worldedit/worldedit.properties",
-          "type": "File",
-          "artifact": {
-            "size": 2546,
-            "MD5": "c6517d529c895d0ad927a4939624c89f",
-            "path": "config/worldedit/worldedit.properties",
-            "url": "https://kabutobr.github.io/KaelThera-Distribution/arquivos/config/worldedit/worldedit.properties"
-          }
-        },
-        {
-          "id": "kael-file-0f42a2d72fdbc10621e4",
-          "name": "config/xaero/lib/client.cfg",
-          "type": "File",
-          "artifact": {
-            "size": 26,
-            "MD5": "dd7d24d2b991f7648671c16d0a74c265",
-            "path": "config/xaero/lib/client.cfg",
-            "url": "https://kabutobr.github.io/KaelThera-Distribution/arquivos/config/xaero/lib/client.cfg"
-          }
-        },
-        {
-          "id": "kael-file-019ccaa0abe46611febe",
-          "name": "config/xaero/lib/common.cfg",
-          "type": "File",
-          "artifact": {
-            "size": 236,
-            "MD5": "e085e122e32132e1fa73ac927f7ece81",
-            "path": "config/xaero/lib/common.cfg",
-            "url": "https://kabutobr.github.io/KaelThera-Distribution/arquivos/config/xaero/lib/common.cfg"
-          }
-        },
-        {
-          "id": "kael-file-70750c446b973627684d",
-          "name": "config/xaero/lib/profiles/default.cfg",
-          "type": "File",
-          "artifact": {
-            "size": 121,
-            "MD5": "e6a2491cfa99c4163942c19eb7b4c489",
-            "path": "config/xaero/lib/profiles/default.cfg",
-            "url": "https://kabutobr.github.io/KaelThera-Distribution/arquivos/config/xaero/lib/profiles/default.cfg"
-          }
-        },
-        {
-          "id": "kael-file-b865177b069d43a026b6",
-          "name": "config/xaero/lib/server_profiles/default.cfg",
-          "type": "File",
-          "artifact": {
-            "size": 75,
-            "MD5": "a7ba1c4e531ad6afe1fa89e86f7dfd6f",
-            "path": "config/xaero/lib/server_profiles/default.cfg",
-            "url": "https://kabutobr.github.io/KaelThera-Distribution/arquivos/config/xaero/lib/server_profiles/default.cfg"
-          }
-        },
-        {
-          "id": "kael-file-ec06f951e1ae168808d8",
-          "name": "config/xaero/minimap/client.cfg",
-          "type": "File",
-          "artifact": {
-            "size": 235,
-            "MD5": "7a8d5e6353c7471f6002052f1fbd71bb",
-            "path": "config/xaero/minimap/client.cfg",
-            "url": "https://kabutobr.github.io/KaelThera-Distribution/arquivos/config/xaero/minimap/client.cfg"
-          }
-        },
-        {
-          "id": "kael-file-8811f227f5c55d306403",
-          "name": "config/xaero/minimap/common.cfg",
-          "type": "File",
-          "artifact": {
-            "size": 147,
-            "MD5": "48d56532be92f58e976a2d1753abdd35",
-            "path": "config/xaero/minimap/common.cfg",
-            "url": "https://kabutobr.github.io/KaelThera-Distribution/arquivos/config/xaero/minimap/common.cfg"
-          }
-        },
-        {
-          "id": "kael-file-18c5cff14076f6e97a7b",
-          "name": "config/xaero/minimap/default_radar_categories_client.json",
-          "type": "File",
-          "artifact": {
-            "size": 5531,
-            "MD5": "9c08ddf57ca870f128b7671da8fbd0f7",
-            "path": "config/xaero/minimap/default_radar_categories_client.json",
-            "url": "https://kabutobr.github.io/KaelThera-Distribution/arquivos/config/xaero/minimap/default_radar_categories_client.json"
-          }
-        },
-        {
-          "id": "kael-file-b0343e45f3f478a83190",
-          "name": "config/xaero/minimap/default_radar_categories_server.json",
-          "type": "File",
-          "artifact": {
-            "size": 4597,
-            "MD5": "7ffe568a308241b93166af2d45ce79c7",
-            "path": "config/xaero/minimap/default_radar_categories_server.json",
-            "url": "https://kabutobr.github.io/KaelThera-Distribution/arquivos/config/xaero/minimap/default_radar_categories_server.json"
-          }
-        },
-        {
-          "id": "kael-file-eb34b5f16404ce191371",
-          "name": "config/xaero/minimap/profiles/default.cfg",
-          "type": "File",
-          "artifact": {
-            "size": 3825,
-            "MD5": "39b36f582769dd7ea8222f60f7059302",
-            "path": "config/xaero/minimap/profiles/default.cfg",
-            "url": "https://kabutobr.github.io/KaelThera-Distribution/arquivos/config/xaero/minimap/profiles/default.cfg"
-          }
-        },
-        {
-          "id": "kael-file-ab21cbc04e0d3fb334b7",
-          "name": "config/xaero/minimap/profiles/info_display_config/default.cfg.txt",
-          "type": "File",
-          "artifact": {
-            "size": 684,
-            "MD5": "64d98932063f0be723920fbdb1de1268",
-            "path": "config/xaero/minimap/profiles/info_display_config/default.cfg.txt",
-            "url": "https://kabutobr.github.io/KaelThera-Distribution/arquivos/config/xaero/minimap/profiles/info_display_config/default.cfg.txt"
-          }
-        },
-        {
-          "id": "kael-file-735c9425602e65a8f76e",
-          "name": "config/xaero/minimap/server_profiles/default.cfg",
-          "type": "File",
-          "artifact": {
-            "size": 75,
-            "MD5": "a7ba1c4e531ad6afe1fa89e86f7dfd6f",
-            "path": "config/xaero/minimap/server_profiles/default.cfg",
-            "url": "https://kabutobr.github.io/KaelThera-Distribution/arquivos/config/xaero/minimap/server_profiles/default.cfg"
-          }
-        },
-        {
-          "id": "kael-file-53c176a8f5f6713e5d57",
-          "name": "config/xaero/world-map/client.cfg",
-          "type": "File",
-          "artifact": {
-            "size": 521,
-            "MD5": "ab1be7cbe44d8ac32333a69570ab8cae",
-            "path": "config/xaero/world-map/client.cfg",
-            "url": "https://kabutobr.github.io/KaelThera-Distribution/arquivos/config/xaero/world-map/client.cfg"
-          }
-        },
-        {
-          "id": "kael-file-9d683d3664d09e1bd93f",
-          "name": "config/xaero/world-map/common.cfg",
-          "type": "File",
-          "artifact": {
-            "size": 141,
-            "MD5": "b5ddb993fe4200e02fec18254463b2c2",
-            "path": "config/xaero/world-map/common.cfg",
-            "url": "https://kabutobr.github.io/KaelThera-Distribution/arquivos/config/xaero/world-map/common.cfg"
-          }
-        },
-        {
-          "id": "kael-file-79d477936979c4da5637",
-          "name": "config/xaero/world-map/profiles/default.cfg",
-          "type": "File",
-          "artifact": {
-            "size": 1619,
-            "MD5": "21c979a028cd1efa4cc914ceca5b54b9",
-            "path": "config/xaero/world-map/profiles/default.cfg",
-            "url": "https://kabutobr.github.io/KaelThera-Distribution/arquivos/config/xaero/world-map/profiles/default.cfg"
-          }
-        },
-        {
-          "id": "kael-file-77edb6e49fe37b6579f0",
-          "name": "config/xaero/world-map/server_profiles/default.cfg",
-          "type": "File",
-          "artifact": {
-            "size": 75,
-            "MD5": "a7ba1c4e531ad6afe1fa89e86f7dfd6f",
-            "path": "config/xaero/world-map/server_profiles/default.cfg",
-            "url": "https://kabutobr.github.io/KaelThera-Distribution/arquivos/config/xaero/world-map/server_profiles/default.cfg"
-          }
-        },
-        {
-          "id": "kael-file-f29dbfa88ca6627bb74c",
-          "name": "config/xaerohud.txt",
-          "type": "File",
-          "artifact": {
-            "size": 123,
-            "MD5": "2f87c54b0b2e85e6a5031171284d6f31",
-            "path": "config/xaerohud.txt",
-            "url": "https://kabutobr.github.io/KaelThera-Distribution/arquivos/config/xaerohud.txt"
-          }
-        },
-        {
-          "id": "kael-file-ae07e7c4f931d14638b9",
-          "name": "config/xaeropatreon.txt",
-          "type": "File",
-          "artifact": {
-            "size": 0,
-            "MD5": "d41d8cd98f00b204e9800998ecf8427e",
-            "path": "config/xaeropatreon.txt",
-            "url": "https://kabutobr.github.io/KaelThera-Distribution/arquivos/config/xaeropatreon.txt"
           }
         },
         {
